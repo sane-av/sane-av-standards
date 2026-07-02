@@ -311,7 +311,7 @@ When this standard conflicts with an owner's published internal standards, contr
 
 ### 11.2 Informative References
 
-- **IEC 60027-3:2002.** Letter symbols to be used in electrical technology — Part 3: Logarithmic and related quantities, and their units. International Electrotechnical Commission.
+- **IEC 60027-3:2002.** Letter symbols to be used in electrical technology, Part 3: Logarithmic and related quantities, and their units. International Electrotechnical Commission.
 - **NIST SP 811.** Guide for the Use of the International System of Units (SI). National Institute of Standards and Technology. <https://www.nist.gov/pml/special-publication-811>
 - **Wikipedia contributors.** "Decibel." *Wikipedia, The Free Encyclopedia.* Accessed July 2026. <https://en.wikipedia.org/wiki/Decibel>
 - **NIOSH.** "Occupational Noise Exposure." DHHS (NIOSH) Publication No. 98-126. <https://www.cdc.gov/niosh/docs/98-126/>
@@ -363,9 +363,9 @@ Per NIST SP 811, a space separates the numerical value from the unit symbol in a
 
 The decibel is fundamentally a ratio. Stating `-10 dB` tells the reader nothing about the absolute quantity unless the reference is known. In professional AV, the same numeric value can represent radically different conditions:
 
-- `-10 dBFS` — a digital signal with 10 dB of headroom (clean)
-- `-10 dBu` — a very low analog level (near noise floor)
-- `-10 dB SPL` — well below the threshold of human hearing
+- `-10 dBFS`: a digital signal with 10 dB of headroom (clean)
+- `-10 dBu`: a very low analog level (near noise floor)
+- `-10 dB SPL`: well below the threshold of human hearing
 
 In a DSP configuration file where the context might not be visible (e.g., an exported preset reviewed by a different engineer), the ambiguity is a real source of commissioning errors and service delays.
 
