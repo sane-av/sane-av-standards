@@ -2,16 +2,25 @@
 saneId: "SANE-001"
 title: "The AV Abbreviation: Orthography for Professional Audiovisual Work"
 description: "Establishes 'AV' (without slash) as the standard abbreviation for 'audiovisual' in all professional AV documentation, labeling, and digital systems."
-status: "draft"
-version: "0.1"
-pubDate: 2026-07-01
+status: "under-review"
+version: "0.9"
+pubDate: 2026-07-02
 authors: ["SANE Community"]
 tags: ["orthography", "abbreviation", "documentation", "labeling", "naming"]
 category: "Documentation"
+type: "practice"
 maintainer: "SANE AV"
+updates: []
+obsoletes: []
 ---
 
-> **Status: Draft**. This standard is under development. Feedback welcome via [GitHub Issues](https://github.com/sane-av/sane-av.github.io/issues).
+## Abstract
+
+This document defines the correct written abbreviation for "audiovisual" in professional AV work: **AV** (two capital letters, no slash, no hyphen). The forms "A/V" and "A-V" are prohibited in all formal AV documentation, labeling, filenames, drawings, system configurations, database fields, and programmatic identifiers.
+
+## Status of This Memo
+
+Under review. This standard is in its public review period. Feedback and proposed changes should be submitted through the SANE project repository.
 
 ---
 
@@ -23,7 +32,7 @@ This standard defines the correct written abbreviation for "audiovisual" in prof
 
 ### 1.2 Why It Matters
 
-"A/V" is not a harmless stylistic variant. The forward slash is a reserved character in every major file system, in URLs, and in most data formats. Its presence in an abbreviation breaks filenames on Windows, macOS, and Linux; it is interpreted as a path separator in URLs and database keys; and it confuses search engines, text parsers, and programmatic tools. Beyond the technical problems, the slash incorrectly implies an either/or relationship ("audio or visual"), whereas the field is defined by the integration of both.
+The form "A/V" creates avoidable technical and editorial problems in professional AV documentation. The forward slash is a reserved or syntactically meaningful character in file paths, URLs, many identifiers, and many data-processing contexts. Its presence in an abbreviation creates avoidable problems in filenames, repositories, URLs, database keys, search indexes, and programmatic tools. Beyond the technical problems, the slash incorrectly implies an either/or relationship ("audio or visual"), whereas the field is defined by the integration of both.
 
 The "A-V" hyphenated form is also incorrect: "audiovisual" is a single compound word in standard English, not a hyphenated construction.
 
@@ -39,11 +48,13 @@ This standard eliminates the problem at its source: **AV** is the single correct
 
 ### 1.4 Compliance Snapshot
 
-- **What must be present:** The abbreviation "AV" where the term "audiovisual" is abbreviated.
-- **What must match:** All project documents, labels, filenames, drawings, configuration files, and data records.
-- **What must be verified:** No slash character in audiovisual abbreviations across all project deliverables.
-- **What must be documented:** Any legacy exceptions and their remediation plan.
-- **What would clearly fail:** Use of "A/V" or "A-V" in any new or revised professional AV deliverable.
+| Question | Answer |
+|----------|--------|
+| What must be present? | The abbreviation "AV" where the term "audiovisual" is abbreviated |
+| What must match? | All project documents, labels, filenames, drawings, configuration files, and data records |
+| What must be verified? | No slash character in audiovisual abbreviations across all project deliverables |
+| What must be documented? | Any legacy exceptions and their remediation plan |
+| What would clearly fail? | Use of "A/V" as an abbreviation for "audiovisual" in a new or revised professional AV deliverable |
 
 ### 1.5 Who Should Read This
 
@@ -77,7 +88,7 @@ This standard eliminates the problem at its source: **AV** is the single correct
 
 ## 3. Definitions
 
-**Audiovisual**: Electronic media or technology possessing both a sound and a visual component [Wikipedia, 2026]. The term is a single compound word: "audio" + "visual" → "audiovisual." First known use in English: 1902 [Merriam-Webster, 2026].
+**Audiovisual**: The standard English compound word referring to material, systems, or technology involving both sound and visual components. First known use in English: 1902 [Merriam-Webster, 2026].
 
 **AV**: The standard two-letter initialism for "audiovisual." Written in capital letters, no periods, no slash, no hyphen. Pronounced as the letters "A-V."
 
@@ -91,19 +102,21 @@ This standard eliminates the problem at its source: **AV** is the single correct
 
 ## 4. Requirements
 
-> **Requirement language:** This standard uses **MUST** (mandatory), **MUST NOT** (prohibited), **SHOULD** (strongly recommended with possible exceptions), **SHOULD NOT** (discouraged with possible exceptions), and **MAY** (optional), as defined in the [SANE conventions](https://sane-av.github.io/contributing). Only use MUST for requirements verifiable by review, inspection, measurement, testing, or documentation.
+> **Requirement language:** This document uses **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** per BCP 14, RFC 2119, and RFC 8174. Reserve MUST for safety, interoperability, or functional failures.
 
 ### 4.1 General Requirements
 
-1. The abbreviation for "audiovisual" in all professional AV documentation, labeling, filenames, and digital systems MUST be written as **AV** (two capital letters, no slash, no hyphen, no periods).
-2. The full term MUST be written as **audiovisual**: one word, no hyphen, no slash.
-3. When defining the abbreviation at first use in a document, the form MUST be: "audiovisual (AV)", not "audio/visual (A/V)" or "audio-visual (AV)."
+1. In formal professional AV deliverables, the abbreviation for "audiovisual" MUST be written as **AV**.
+2. The forms **A/V** and **A-V** MUST NOT be used as abbreviations for "audiovisual" in new or revised formal professional AV deliverables.
+3. When the full term is used, it SHOULD be written as **audiovisual**: one word, no hyphen, no slash.
+4. When defining the abbreviation at first use, documents SHOULD use the form **audiovisual (AV)**.
 
 ### 4.2 Capitalization
 
-1. The abbreviation "AV" MUST appear in capital letters at all times. The lowercase form "av" MUST NOT be used as an abbreviation for "audiovisual" in formal AV documentation.
+1. The abbreviation "AV" MUST appear in capital letters in human-facing documentation, drawings, labels, filenames, schedules, and formal project records.
 2. When "AV" appears as part of a compound term or prefix (e.g., "AV-over-IP," "AV rack," "AV system"), the "AV" component MUST remain capitalized.
-3. When the full word "audiovisual" appears at the beginning of a sentence, it follows standard sentence capitalization.
+3. In programming contexts where lowercase or mixed-case identifiers are required by local coding style, the letters "av" MAY appear as part of an identifier (e.g., `avInput`, `av_mute_state`, `avRouteTable`), provided the slash and hyphen forms are not used.
+4. When the full word "audiovisual" appears at the beginning of a sentence, it follows standard sentence capitalization.
 
 ### 4.3 Documentation Requirements
 
@@ -129,7 +142,7 @@ The following document types MUST use "AV" and MUST NOT use "A/V" or "A-V":
 
 1. The form **A/V** MUST NOT appear in any new or revised professional AV deliverable.
 2. The form **A-V** MUST NOT be used as a substitute for "AV."
-3. The form **av** (lowercase) MUST NOT be used as an abbreviation for "audiovisual" in formal AV documentation.
+3. The lowercase form "av" SHOULD NOT be used in human-facing formal AV documentation. It MAY be used in software identifiers where required by coding convention (see §4.2).
 4. Mixing forms within the same document, project, or system (e.g., using "AV" in drawings but "A/V" in labels) MUST NOT occur.
 
 ### 4.7 Recommended Practices
@@ -169,9 +182,9 @@ The following conditions make a deliverable non-compliant:
 1. Any occurrence of "A/V" on a drawing, label, schedule, or formal document.
 2. Any occurrence of "A-V" used as the abbreviation for "audiovisual."
 3. Mixed forms within a single project or document set.
-4. Use of lowercase "av" as an abbreviation for "audiovisual" in a formal document.
+4. Use of lowercase "av" as an abbreviation for "audiovisual" in human-facing formal documentation.
 5. Filenames containing the slash character in the AV abbreviation position, regardless of whether the file system permitted the name: the intent is non-compliant.
-6. A project that contains no AV-related text, but for which the standard was claimed in specifications.
+6. A claim of compliance that cannot be verified against any written abbreviation, filename, label, or identifier is outside the scope of this standard.
 
 ---
 
@@ -236,7 +249,13 @@ The project is non-compliant due to mixed and incorrect forms. Both the "A/V" an
 
 ---
 
-## 8. Exceptions
+## 8. Safety, Security, and Privacy Considerations
+
+This document defines an orthographic convention for written abbreviations. It introduces no technical requirements for AV systems and has no safety, security, or privacy considerations.
+
+---
+
+## 9. Exceptions
 
 Exceptions to this standard MUST be documented and approved. A documented exception shall include:
 
@@ -255,7 +274,7 @@ Exceptions MUST NOT be used to avoid compliance on new work. Every new project t
 
 ---
 
-## 9. Relationship to Other Standards
+## 10. Relationship to Other Standards
 
 - This standard is independent. It does not modify, extend, or depend on any other SANE standard.
 - This standard is consistent with editorial conventions used by the professional AV industry's primary trade association, AVIXA (Audiovisual and Integrated Experience Association) [AVIXA, 2026].
@@ -266,18 +285,20 @@ When this standard conflicts with an owner's published internal standards, contr
 
 ---
 
-## 10. References
+## 11. References
 
-### 10.1 Normative References
+### 11.1 Normative References
 
-None. This standard is self-contained.
+**[RFC2119]** Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, March 1997. <https://www.rfc-editor.org/rfc/rfc2119>
 
-### 10.2 Informative References
+**[RFC8174]** Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, May 2017. <https://www.rfc-editor.org/rfc/rfc8174>
+
+### 11.2 Informative References
 
 - **Merriam-Webster.** "Audiovisual." *Merriam-Webster.com Dictionary.* Accessed July 2026. https://www.merriam-webster.com/dictionary/audiovisual
 - **Wikipedia contributors.** "Audiovisual." *Wikipedia, The Free Encyclopedia.* Accessed July 2026. https://en.wikipedia.org/wiki/Audiovisual
 - **AVIXA.** "About AVIXA." *AVIXA.org.* Accessed July 2026. https://www.avixa.org/about-avixa
-- **Allen, William H.** (1975). "Intellectual Abilities and Instructional Media Design." *AV Communication Review*, 23(2), 139–170. https://www.jstor.org/stable/30217831
+- **Allen, William H.** (1975). "Intellectual Abilities and Instructional Media Design." *AV Communication Review*, 23(2), 139–170. <https://www.jstor.org/stable/30217831>
 
 ---
 
@@ -319,7 +340,7 @@ The hyphenated form "A-V" is incorrect because "audiovisual" is not a hyphenated
 
 ### Industry precedent
 
-The professional AV industry's own trade association uses "AV" exclusively. AVIXA's name itself ("Audiovisual and Integrated Experience Association") establishes the pattern: the abbreviation for "audiovisual" is "AV," and the word is spelled as a single unhyphenated compound.
+The professional AV industry's primary trade association, AVIXA, consistently presents its name and public identity using "AV" and "Audiovisual" rather than "A/V."
 
 The academic literature has used "AV" since at least the 1970s (see Allen, 1975, in the journal *AV Communication Review*).
 
@@ -341,4 +362,4 @@ Every professional AV practitioner who has tried to name a file "A/V System Diag
 
 | Version | Date | Notes |
 |---------|------|-------|
-| 0.1 | 2026-07-01 | Initial draft. |
+| 0.9 | 2026-07-02 | Initial publication as under-review. |

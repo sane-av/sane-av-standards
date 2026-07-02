@@ -3,7 +3,7 @@ saneId: "SANE-000"
 title: "SANE Document Style Guide"
 description: "Style, structure, and authoring requirements for SANE standards documents."
 status: "draft"
-version: "0.1"
+version: "0.8"
 pubDate: 2026-07-02
 authors: ["SANE Community"]
 tags: ["meta", "style", "template"]
@@ -38,17 +38,17 @@ This guide also defines when and how requirement language (MUST/SHOULD/MAY) shou
 
 ### 1.3 Core Rules
 
-- Every SANE document MUST include a "Standard at a Glance" section that is fully self-contained.
+- Every SANE document SHOULD include a "Standard at a Glance" section. `specification` and `practice` documents MUST include one.
 - Every SANE document MUST identify a document category from the allowed set (see Document Categories).
-- MUST and MUST NOT SHOULD only be used where non-compliance causes a real failure: safety, interoperability, or functional correctness.
-- `specification` and `practice` documents MUST include a Safety and Security Considerations section, or explicitly state that none apply.
+- MUST and MUST NOT are reserved for safety, interoperability, serviceability, or functional correctness failures.
+- `specification` and `practice` documents MUST include a Safety, Security, and Privacy Considerations section, or explicitly state that none apply.
 - `informational` documents MUST NOT use BCP 14 requirement language.
 
 ### 1.4 Compliance Snapshot
 
 | Question | Answer |
 |----------|--------|
-| What must be present? | Abstract, Status of This Memo, Standard at a Glance, Scope, valid `type` field |
+| What must be present? | Abstract, Status of This Memo, Scope, valid `type` field; Standard at a Glance for specification and practice documents |
 | What must match? | Core Rules must summarize content already in the Requirements section; `type` must be an allowed category value |
 | What must be verified? | Each requirement in the Requirements section is numbered and testable; no authoring notes remain in published text |
 | What must be documented? | Category, status, version, and all required front matter fields |
@@ -100,14 +100,14 @@ A SANE document MUST follow the section order below. Sections marked **Required*
 | Front Matter | **Required** | **Required** | **Required** | **Required** | **Required** |
 | Abstract | **Required** | **Required** | **Required** | **Required** | **Required** |
 | Status of This Memo | **Required** | **Required** | **Required** | **Required** | **Required** |
-| Standard at a Glance | **Required** | **Required** | **Required** | **Required** | **Required** |
-| Scope | **Required** | **Required** | **Required** | **Required** | **Required** |
+| Standard at a Glance | **Required** | **Required** | *Recommended* | *Recommended* | *Recommended* |
+| Scope | **Required** | **Required** | **Required** | *Recommended* | *Recommended* |
 | Definitions | *Recommended* | *Recommended* | **Required** | Optional | Optional |
-| Requirements | **Required** | **Required** | **Required** | **Required** | — |
+| Requirements | **Required** | **Required** | **Required** | Optional | — |
 | Compliance | **Required** | **Required** | **Required** | Optional | — |
 | Examples | ***Strongly Recommended*** | ***Strongly Recommended*** | ***Strongly Recommended*** | Optional | Optional |
 | Field Notes | Optional | Optional | Optional | Optional | Optional |
-| Safety and Security Considerations | **Required** | **Required** | Optional | Optional | Optional |
+| Safety, Security, and Privacy Considerations | **Required** | **Required** | Optional | Optional | Optional |
 | Exceptions | Optional | Optional | Optional | Optional | Optional |
 | Relationship to Other Standards | *Recommended* | *Recommended* | *Recommended* | Optional | Optional |
 | References | *Recommended* | *Recommended* | *Recommended* | Optional | Optional |
@@ -121,7 +121,7 @@ Required fields: `saneId`, `title`, `description`, `status`, `version`, `pubDate
 
 Optional fields: `tags`, `updates`, `obsoletes`, `supersededBy`, `related`.
 
-`status` MUST be one of: `draft`, `under-review`, `published`, `deprecated`. `type` MUST be one of the categories defined in Document Categories. `category` is the AV subject area (e.g., Documentation, Audio, Video, Control, Networking).
+`status` MUST be one of: `draft`, `under-review`, `published`, `deprecated`, `superseded`. `type` MUST be one of the categories defined in Document Categories. `category` is the AV subject area (e.g., Documentation, Audio, Video, Control, Networking).
 
 ### 4.2 Abstract
 
@@ -129,13 +129,15 @@ Short and self-contained. Summarizes what the document does and who it is for. A
 
 ### 4.3 Status of This Memo
 
-States the lifecycle stage: draft, under review, ratified, deprecated, or superseded. SHOULD say where feedback and errata are tracked.
+States the lifecycle stage: draft, under-review, published, deprecated, or superseded. SHOULD say where feedback and errata are tracked.
 
 ### 4.4 Standard at a Glance
 
-SANE's primary practitioner-facing entry point. MUST be fully self-contained: a reader who stops here should have everything needed to apply the standard.
+SANE's primary practitioner-facing entry point. A Standard at a Glance section MUST summarize the document in a practitioner-facing way. It SHOULD include what the standard is about, why it matters, core rules or key points, and a compliance snapshot.
 
-Required subsections:
+Short-form documents (informational documents, simple reference tables, or brief terminology entries) MAY use a simplified form. When a document is short enough that a separate Abstract and Standard at a Glance would repeat the same content, the two sections MAY be combined.
+
+For full-length specification and practice documents, the Standard at a Glance SHOULD include the following subsections:
 - **What This Standard Is About**: one paragraph, plain language.
 - **Why It Matters**: the practical problem this standard solves. If the rationale is extensive, summarize here and expand in Appendix B.
 - **Core Rules**: bullet-point summary of 3–5 requirements or key findings. For `informational` documents, rename this "Key Points."
@@ -164,9 +166,9 @@ Number each requirement so it can be cited during review, commissioning, and iss
 - **Vague:** *"Labels should be clear."*
 - **Testable:** *"Each cable label MUST include the source device, destination device, and signal type."*
 
-Organize into named subsections. See Appendix B for common subsection patterns. Add a one-sentence rationale inline where helpful: *(why: a slash in a filename is illegal on all major operating systems)*.
+Organize into named subsections. Common patterns include organizing by artifact, role, phase, topic, or requirement strength (see SANE-000 Appendix B for details). Add a one-sentence rationale inline where helpful: *(why: a slash in a filename is illegal on all major operating systems)*.
 
-> **Requirement language:** This document uses **MUST** (mandatory; non-compliance is a real failure), **MUST NOT** (prohibited), **SHOULD** (strongly recommended, exceptions allowed with justification), **SHOULD NOT** (discouraged), and **MAY** (optional), per BCP 14 [RFC2119] [RFC8174]. Reserve **MUST** for safety, interoperability, or functional failures, not preferences. Overusing **MUST** erodes its meaning. `informational` documents MUST NOT use BCP 14 requirement language.
+> **Requirement language:** Documents using BCP 14 requirement language MUST include the requirement-language boilerplate defined in the Requirement Language section. `informational` documents MUST NOT use BCP 14 requirement language.
 
 ### 4.8 Compliance
 
@@ -188,11 +190,11 @@ SANE's most distinctive section. Practical guidance from real AV work: design ha
 
 Do not use Field Notes to introduce requirements; those belong in the Requirements section.
 
-### 4.11 Safety and Security Considerations
+### 4.11 Safety, Security, and Privacy Considerations
 
-`specification` and `practice` documents MUST include this section. If neither safety nor security is relevant, state it directly: *"This document has no safety or security considerations."* Do not omit the section.
+`specification` and `practice` documents MUST include this section. If none of safety, security, or privacy is relevant, state it directly: *"This document has no safety, security, or privacy considerations."* Do not omit the section.
 
-AV-relevant topics: electrical hazards, structural loads, rigging, fire and emergency systems, high SPL, network exposure, access control, privacy, recording, and operational misuse.
+AV-relevant topics: electrical hazards, structural loads, rigging, fire and emergency systems, high SPL, network exposure, access control, privacy, recording, camera placement, room occupancy data, signage analytics, and operational misuse.
 
 ### 4.12 Exceptions
 
@@ -224,7 +226,7 @@ Use these terms sparingly. Reserve **MUST** and **MUST NOT** for requirements af
 
 `informational` documents MUST NOT use BCP 14 requirement language.
 
-Requirement language SHOULD appear only in the Requirements section or in sections explicitly identified as normative. Examples, rationale, and appendices should avoid requirement language unless the document explicitly marks a section as normative.
+Requirement language SHOULD appear only in the Requirements section, the Compliance section, the Safety, Security, and Privacy Considerations section, or other sections explicitly identified as normative. Examples, rationale, and appendices should avoid requirement language unless the document explicitly marks a section as normative.
 
 ---
 
@@ -253,9 +255,9 @@ Spelling and punctuation MUST be internally consistent within a document. SANE d
 
 ---
 
-## 7. Safety and Security Considerations
+## 7. Safety, Security, and Privacy Considerations
 
-This document defines structure and style conventions and introduces no technical requirements for AV systems. It has no safety or security considerations.
+This document defines structure and style conventions and introduces no technical requirements for AV systems. It has no safety, security, or privacy considerations.
 
 ---
 
@@ -266,11 +268,11 @@ A SANE document conforms to this style guide when:
 1. the `type` field identifies a valid category from Document Categories;
 2. all required front matter fields are present and non-empty;
 3. the Abstract and Status of This Memo sections are present;
-4. the Standard at a Glance section is present and fully self-contained;
-5. the Scope section identifies what is and is not covered;
+4. the Standard at a Glance section is present when required for the document category, and is self-contained when included;
+5. the Scope section is present when required for the document category, and identifies what is and is not covered when included;
 6. requirement language follows the Requirement Language section;
 7. all requirements are numbered and testable;
-8. `specification` and `practice` documents include Safety and Security Considerations or state that none apply;
+8. `specification` and `practice` documents include Safety, Security, and Privacy Considerations or state that none apply;
 9. normative and informative references are separated when both are present;
 10. no authoring instructions remain in the published document.
 
@@ -430,9 +432,9 @@ A [deliverable/project/system] conforms to this document when:
 
 ---
 
-## 8. Safety and Security Considerations
+## 8. Safety, Security, and Privacy Considerations
 
-[This document has no safety or security considerations.] OR [Describe relevant considerations.]
+[This document has no safety, security, or privacy considerations.] OR [Describe relevant considerations.]
 
 ---
 
@@ -477,7 +479,7 @@ A [deliverable/project/system] conforms to this document when:
 
 ## Appendix B: Subsection Patterns for the Requirements Section
 
-Pick one pattern and apply it consistently throughout the Requirements section. Delete this appendix before publishing.
+These patterns are informative. Individual SANE documents may use them during drafting, but should not include this appendix in the published document unless it adds value to that specific standard.
 
 | Pattern | Best when | Example subsection names |
 |---------|-----------|--------------------------|
@@ -491,7 +493,7 @@ Pick one pattern and apply it consistently throughout the Requirements section. 
 
 ## Appendix C: Rationale
 
-SANE adopts the useful parts of RFC structure: stable identifiers, clear status, careful requirement language, separated references, mandatory safety/security review, without the full IETF publication model.
+SANE adopts the useful parts of RFC structure: stable identifiers, clear status, careful requirement language, separated references, mandatory safety, security, and privacy review, without the full IETF publication model.
 
 The "Standard at a Glance" section is SANE's primary departure from the RFC model. An RFC Abstract is written for discovery; the Standard at a Glance is written for a practitioner who will use the standard in the field. Core Rules and the Compliance Snapshot give working AV professionals immediate value without requiring them to read the full document.
 
@@ -503,4 +505,4 @@ Field Notes is uniquely SANE. No major standards body has a dedicated section fo
 
 | Version | Date | Notes |
 |---------|------|-------|
-| 0.1 | 2026-07-02 | Initial draft. |
+| 0.8 | 2026-07-02 | Working draft: RFC-style structure, document categories, section matrix, requirement language conventions, reusable template. |
