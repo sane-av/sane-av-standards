@@ -4,7 +4,7 @@ Community-voted technical standards for professional AV systems. Each standard i
 
 ## Structure
 
-Each standard is a single Markdown file in this repo's root. The filename is the standard's ID (e.g., `SANE-001-audio-levels.md`).
+Each standard is a single Markdown file in the `specs/` directory. The filename is the standard's ID (e.g., `SANE-001-av-abbreviation.md`).
 
 ## License
 
